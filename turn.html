@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+
+		<title>标题</title>
+		<style type ="text/css">
+		*{margin: 0;padding: 0;}/*全局*/
+			div{
+				width:500px;
+				height: 300px;
+				overflow: hidden;
+				margin: 0 auto;
+				border-radius: 250px;/*圆角*/
+			}
+			ul{
+				width: 2500px;
+				height: 300px;
+				/*动画*/
+				animation: a 5s infinite;
+				/*相对定位*/
+				position: relative;
+			}
+			ul li{
+				list-style: none;
+				float: left;
+			}
+			img{
+				width: 500px;
+				height: 300px;
+			}
+			@keyframes a{
+				0%{left: 0px;}
+				20%{left: -500px;}
+				40%{left: -1000px;}
+				60%{left:-1500px;}
+				80%{left:-2000px}
+				100%{left:0px}
+			}
+			p{
+				height: 50px;
+				width: 500px;
+				margin: 30px auto;
+				font-size: 30px;
+				text-align:center;
+				background: blanchedalmond;
+				text-shadow: 2px 2px 3px yellow;
+				box-shadow: 0px 0px 6px 4px gray;
+				box-shadow: inset 0px 0px 4px 3px red;/*覆盖上面一行的代码*/
+			}
+			h1{
+				height: 1000px;
+			}
+			a{
+				font-size: 20px;
+			}
+			h2{
+				font-size: 30px;
+				text-align: center;
+			}
+			.img{
+				display: block;
+				margin: 0 auto;
+				transition: all 1s;/*过渡*/
+				
+			}
+			.img:hover{transform: rotateY(360deg);}
+		</style>
+	</head>
+	<body>
+		<div id="a">
+			欢迎来到~
+		
+		<ul class="a">
+			<li><img src="img/1.jpg"></li>
+			<li><img src="img/2.jpg"></li>
+			<li><img src="img/3.jpg"></li>
+			<li><img src="img/4.jpg"></li>
+			<li><img src="img/5.jpg"></li>
+			
+		</ul>
+		</div>
+		<p>这是一行带阴影的字。</p>
+		<h1></h1>
+		<img class="img" src="img/10.jpg"/>
+		<h2><a href="#a">轮播图</a></h2>
+		<h3><a href="index.html">返回主页</a></h3>
+	</body>
+</html>
