@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>3d效果</title>
+	</head>
+	<style type ="text/css">
+	#box{
+		perspective: 800px;
+		perspective-origin: 50% 50%;
+		overflow: hidden;
+	}
+		.box{
+			width: 500px;
+			height: 500px;
+			transform-style: preserve-3d;
+			
+			margin: 0 auto;
+			position: relative;
+		
+			
+		}/*先写相对定位*/
+		#d1,#d2,#d3,#d4,#d5,#d6{
+			height:500px;
+			width:500px;
+			font-size: 350px;
+			font-family: "微软雅黑";
+			text-align: center;
+			line-height: 500px;
+		
+			background:brown;
+			position: absolute;
+			
+		}/*再写绝对定位*/
+	
+		/*.box div{  与上面#d1,#d2,#d3,#d4,#d5,#d6相同
+			width: 480px;
+			height: 480px;
+			padding:40px;
+			background: brown;font-weight: bold;
+			position: absolute;
+			
+		}*/
+		#d1{
+			transform-origin: top;
+			transition: all 1s linear;
+		}
+		#d2,#d3,#d4,#d5,#d6{
+			transform-origin: top;
+			transition: all 1s linear;
+			transform: rotateX(90deg); 
+		}
+		.a{
+			text-align: center;
+			margin:20px auto;
+		}
+	</style>
+	<script type="text/javascript">
+	var i=1;
+		function q(){
+			if(i==6) return;
+			document.getElementById("d"+i).style.transform="rotateX(-90deg)";
+			i++;
+			document.getElementById("d"+i).style.transform="rotateX(0deg)";
+		}
+		function h(){
+			if(i==1) return;
+			document.getElementById("d"+i).style.transform="rotateX(90deg)";
+			i--;
+			document.getElementById("d"+i).style.transform="rotateX(0deg)";
+		}
+	</script>
+	<body>
+		<div id="box">
+			<div class="box">  <!--.box div是包括以下d1到d6-->
+				<div id="d1">6</div>
+				<div id="d2">5</div>
+				<div id="d3">4</div>
+				<div id="d4">3</div>
+				<div id="d5">2</div>
+				<div id="d6">1</div>
+			</div>
+		</div>
+		<div class="a"><a href="javascript:q()">向前</a></div>&nbsp;&nbsp;&nbsp;<div class="a"><a href="javascript:h()">向后</a></div>
+	</body>
+</html>
